@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const formData = new FormData(contactForm);
 
-      fetch("https://formspree.io/f/mgonyewa", {
+      fetch("https://formspree.io/f/mqewookn", {
         method: "POST",
         body: formData,
         headers: { "Accept": "application/json" }
