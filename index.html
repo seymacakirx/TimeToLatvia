@@ -244,19 +244,45 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section section--alt">
-  <div class="container">
-    <h2>İletişim</h2>
+<!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container grid">
+      <div>
+        <h2>İletişim</h2>
+        <p>Hemen bizimle iletişime geçin, en kısa sürede Golden Visa başvurunuzu başlatalım.</p>
+        <div class="contact-info">
+          <div><strong>E-posta:</strong> info@orientagrup.com.tr</div>
+          <div><strong>Telefon:</strong> +90 (536) 265 20 41</div>
+          <div><strong>Adres:</strong> Fenerbahçe Mah. Bağdat Cd. No:84/2 Kadıköy/İstanbul</div>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form card" id="contactForm">
+          <label>Ad Soyad<input type="text" name="name" placeholder="Adınız Soyadınız" required></label>
+          <label>E-posta<input type="email" name="email" placeholder="ornek@mail.com" required></label>
+          <label>Mesaj<textarea name="message" rows="5" placeholder="Lütfen kısaca ihtiyacınızı yazın..." required></textarea></label>
+          <button type="submit">Gönder</button>
+        </form>
+        <div id="thankMessage" style="display:none; color:black; margin-top:12px;">
+          Teşekkürler! En kısa sürede size ulaşacağız.
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <form class="contact-form">
-      <input type="text" placeholder="Ad Soyad" required>
-      <input type="email" placeholder="E-posta" required>
-      <textarea rows="5" placeholder="Mesajınız" required></textarea>
-      <button type="submit">Gönder</button>
-    </form>
-  </div>
-</section>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© <span id="year"></span> Time To Greece. Tüm hakları saklıdır.</div>
+      <div class="footer__links">
+        <a href="#about">Hakkımızda</a>
+        <a href="#services">Hizmetlerimiz</a>
+        <a href="#portfolio">Süreç</a>
+        <a href="#contact">İletişim</a>
+      </div>
+    </div>
+  </footer>
 
+  <!-- JS -->
+  <script src="main.js"></script>
 </body>
 </html>
