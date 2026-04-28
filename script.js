@@ -46,40 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-    // --- AJAX FORMSPREE GÖNDERİMİ ---
-  const form = document.querySelector('form.card.form');
-  if(form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault(); // Sayfanın yenilenmesini engelle
-
-      const formData = new FormData(form);
-
-      fetch("https://formspree.io/f/mqewookn", {
-        method: "POST",
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      .then(response => {
-        if (response.ok) {
-          console.log("Mesaj başarıyla gönderildi!");
-          form.reset(); // formu temizle
-          alert("Mesajınız gönderildi, teşekkürler!"); // istersen alert yerine HTML mesaj divi kullan
-        } else {
-          return response.json().then(data => {
-            throw new Error(data.error || "Bir hata oluştu!");
-          });
-        }
-      })
-      .catch(error => {
-        console.error("Form gönderilemedi:", error);
-        alert("Mesaj gönderilemedi, lütfen tekrar deneyin.");
-      });
-    });
-  }
-});
-
   // --- Filolar Slider (Opsiyonel) ---
   const track = document.querySelector(".fleet-track");
   const prev = document.querySelector(".fleet-prev");
