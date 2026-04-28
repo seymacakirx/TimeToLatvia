@@ -1,13 +1,13 @@
 :root{
-  --bg:#ffffff;                 /* beyaz arka plan */
-  --fg:#1a1a1a;                /* koyu yazı */
+  --bg:#ffffff;
+  --fg:#1a1a1a;
   --muted:#555555;
 
-  --card:rgba(158,27,50,.05);  /* çok hafif kırmızı ton */
+  --card:rgba(158,27,50,.05);
   --border:rgba(158,27,50,.15);
 
-  --accent:#9E1B32;            /* Latvia kırmızısı */
-  --accent2:#C62839;           /* ikinci kırmızı ton */
+  --accent:#9E1B32;
+  --accent2:#C62839;
 
   --shadow: 0 12px 30px rgba(0,0,0,.10);
   --radius:16px;
@@ -109,32 +109,37 @@ a{ color:inherit; text-decoration:none; }
   width:100%;
   height:100%;
   object-fit:cover;
+  z-index:0;
 }
 
+/* DARK OVERLAY (ULTIMATE FIX) */
 .hero__overlay{
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,.2),
-    rgba(0,0,0,.4)
-  );
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.55);
+  z-index:1;
 }
 
+/* HERO CONTENT */
 .hero__content{
   position:relative;
   z-index:2;
   padding:68px 0 80px;
+  color:white;
 }
 
 .hero h1{
   font-size: clamp(34px, 5vw, 56px);
   margin:0 0 10px;
+  color:white;
+  text-shadow: 0 10px 30px rgba(0,0,0,.6);
 }
 
 .hero p{
   margin:0 0 22px;
   font-size: clamp(18px, 2.5vw, 24px);
   font-weight:600;
-  color: rgba(0,0,0,.75);
+  color:white;
   max-width: 56ch;
 }
 
@@ -161,15 +166,6 @@ a{ color:inherit; text-decoration:none; }
 .btn--ghost{
   background: rgba(158,27,50,.08);
   border-color: rgba(158,27,50,.2);
-}
-
-/* BADGES */
-.badge{
-  padding:8px 12px;
-  border-radius:999px;
-  background: rgba(158,27,50,.08);
-  border:1px solid rgba(158,27,50,.15);
-  font-weight:600;
 }
 
 /* SECTIONS */
@@ -220,6 +216,21 @@ input:focus, textarea:focus{
   box-shadow: 0 0 0 3px rgba(158,27,50,.15);
 }
 
+/* CONTACT LAYOUT (ULTIMATE FIX) */
+#contact .grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:40px;
+  align-items:start;
+}
+
+/* FLEET / SÜREÇ GRID */
+.fleet-track{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:18px;
+}
+
 /* FOOTER */
 .footer{
   padding:26px 0;
@@ -227,11 +238,32 @@ input:focus, textarea:focus{
   color: var(--muted);
 }
 
-/* MOBILE */
-@media (max-width:900px){
-  .cards{ grid-template-columns:1fr; }
+/* RESPONSIVE */
+@media (max-width:1000px){
+  .fleet-track{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+@media (max-width:900px){
+  .cards{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:768px){
+  #contact .grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:600px){
+  .fleet-track{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE NAV */
 @media (max-width:720px){
   .nav{ display:none; }
 
