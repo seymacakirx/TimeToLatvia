@@ -1,14 +1,16 @@
 :root{
-  --bg:#0b1220;
-  --fg:#e8edf5;
-  --muted:#a8b3c7;
-  --card:rgba(255,255,255,.06);
-  --border:rgba(255,255,255,.12);
-  --accent:#66d1ff;
-  --accent2:#2a8cff;
-  --shadow: 0 12px 30px rgba(0,0,0,.35);
+  --bg:#ffffff;                 /* beyaz arka plan */
+  --fg:#1a1a1a;                /* koyu yazı */
+  --muted:#555555;
+
+  --card:rgba(158,27,50,.05);  /* çok hafif kırmızı ton */
+  --border:rgba(158,27,50,.15);
+
+  --accent:#9E1B32;            /* Latvia kırmızısı */
+  --accent2:#C62839;           /* ikinci kırmızı ton */
+
+  --shadow: 0 12px 30px rgba(0,0,0,.10);
   --radius:16px;
-}
 
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
