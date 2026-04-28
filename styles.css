@@ -32,7 +32,7 @@ a{ color:inherit; text-decoration:none; }
   margin:0 auto;
 }
 
-/* TOPBAR */
+/* ================= TOPBAR ================= */
 .topbar{
   position:fixed;
   top:0; left:0; right:0;
@@ -64,7 +64,6 @@ a{ color:inherit; text-decoration:none; }
 
 .nav a{
   font-weight:600;
-  color: var(--fg);
   padding:10px 8px;
   border-radius:10px;
 }
@@ -93,7 +92,7 @@ a{ color:inherit; text-decoration:none; }
   border-radius:2px;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
   position:relative;
   min-height:100vh;
@@ -112,11 +111,11 @@ a{ color:inherit; text-decoration:none; }
   z-index:0;
 }
 
-/* DARK OVERLAY (ULTIMATE FIX) */
+/* 🔥 LIGHTER OVERLAY (FIXED) */
 .hero__overlay{
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,.55);
+  background: rgba(0,0,0,.38);
   z-index:1;
 }
 
@@ -143,7 +142,7 @@ a{ color:inherit; text-decoration:none; }
   max-width: 56ch;
 }
 
-/* BUTTONS */
+/* ================= BUTTONS ================= */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -151,7 +150,6 @@ a{ color:inherit; text-decoration:none; }
   gap:10px;
   padding:12px 16px;
   border-radius:14px;
-  border:1px solid transparent;
   font-weight:700;
   cursor:pointer;
 }
@@ -161,14 +159,7 @@ a{ color:inherit; text-decoration:none; }
   color:white;
 }
 
-.btn--primary:hover{ filter: brightness(1.05); }
-
-.btn--ghost{
-  background: rgba(158,27,50,.08);
-  border-color: rgba(158,27,50,.2);
-}
-
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 .section{
   padding:72px 0;
   border-top:1px solid rgba(0,0,0,.06);
@@ -185,7 +176,7 @@ h2{ font-size:30px; margin:0 0 10px; }
   color: var(--muted);
 }
 
-/* CARDS */
+/* ================= CARDS ================= */
 .cards{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -200,15 +191,13 @@ h2{ font-size:30px; margin:0 0 10px; }
   box-shadow: var(--shadow);
 }
 
-/* FORM */
+/* ================= FORM ================= */
 input, textarea{
   width:100%;
   margin-top:8px;
-  background:white;
   border:1px solid rgba(158,27,50,.25);
   border-radius:12px;
   padding:12px;
-  color:var(--fg);
 }
 
 input:focus, textarea:focus{
@@ -216,7 +205,7 @@ input:focus, textarea:focus{
   box-shadow: 0 0 0 3px rgba(158,27,50,.15);
 }
 
-/* CONTACT LAYOUT (ULTIMATE FIX) */
+/* ================= CONTACT (YAN YANA) ================= */
 #contact .grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -224,28 +213,51 @@ input:focus, textarea:focus{
   align-items:start;
 }
 
-/* FLEET / SÜREÇ GRID */
+/* ================= SÜREÇ (SLIDER) ================= */
 .fleet-track{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  display:flex;
   gap:18px;
+  overflow-x:auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom:10px;
 }
 
-/* FOOTER */
+/* kartlar */
+.fleet-card{
+  min-width:300px;
+  flex:0 0 auto;
+  scroll-snap-align:start;
+  background:white;
+  border:1px solid rgba(158,27,50,.15);
+  border-radius:16px;
+  box-shadow: var(--shadow);
+  padding:10px;
+}
+
+.fleet-card img{
+  width:100%;
+  border-radius:12px;
+}
+
+/* scrollbar gizle */
+.fleet-track::-webkit-scrollbar{
+  display:none;
+}
+
+.fleet-track{
+  scrollbar-width:none;
+}
+
+/* ================= FOOTER ================= */
 .footer{
   padding:26px 0;
   border-top:1px solid rgba(0,0,0,.06);
   color: var(--muted);
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 @media (max-width:1000px){
-  .fleet-track{
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width:900px){
   .cards{
     grid-template-columns:1fr;
   }
@@ -253,33 +265,13 @@ input:focus, textarea:focus{
 
 @media (max-width:768px){
   #contact .grid{
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
   }
 }
 
-@media (max-width:600px){
-  .fleet-track{
-    grid-template-columns: 1fr;
-  }
-}
-
-/* MOBILE NAV */
 @media (max-width:720px){
   .nav{ display:none; }
-
   .nav__toggle{ display:inline-block; }
-
-  .nav.is-open{
-    display:flex;
-    position:absolute;
-    top:76px;
-    right:20px;
-    flex-direction:column;
-    background:white;
-    border:1px solid rgba(0,0,0,.1);
-    border-radius:16px;
-    padding:10px;
-  }
 
   .brand__logo{ height:90px; }
 }
