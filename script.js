@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const formData = new FormData(form);
 
-      fetch("https://formspree.io/f/mgonyewa", {
+      fetch("https://formspree.io/f/mqewookn", {
         method: "POST",
         body: formData,
         headers: {
